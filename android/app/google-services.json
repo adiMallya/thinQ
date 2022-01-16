@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "321150370073",
+    "project_id": "charcha-a79aa",
+    "storage_bucket": "charcha-a79aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321150370073:android:294ddd54a2f7e43e0a0588",
+        "android_client_info": {
+          "package_name": "com.mAlLyA.forum_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321150370073-4rgh0t9kj2eco6330p3q701vladrku9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOXIka4ljqbbdjvwtVZGRmVIH3bxvEXgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321150370073-4rgh0t9kj2eco6330p3q701vladrku9g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
