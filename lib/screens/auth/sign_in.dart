@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({ Key? key }) : super(key: key);
-
+  
   @override
   _SignInState createState() => _SignInState();
 }
@@ -96,7 +96,6 @@ class _SignInState extends State<SignIn> {
                     child: const Text(
                       "Create an account",
                       style: TextStyle(
-                        color: Colors.blue,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         decoration: TextDecoration.underline,
@@ -164,7 +163,7 @@ class _SignInState extends State<SignIn> {
           width: size.width / 1.2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Colors.blue,
+            color: Colors.cyan,
           ),
           alignment: Alignment.center,
           child: const Text(
