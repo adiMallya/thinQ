@@ -91,7 +91,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   GestureDetector(
                     onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const SignUp())
+                      MaterialPageRoute(builder: (_) => const Register())
                     ),
                     child: const Text(
                       "Create an account",

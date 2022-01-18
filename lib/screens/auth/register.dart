@@ -3,14 +3,14 @@ import 'package:forum_app/screens/home/home.dart';
 import 'package:forum_app/services/auth.dart';
 import 'package:provider/provider.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({ Key? key }) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({ Key? key }) : super(key: key);
 
   @override
-  _SignUpState createState() => _SignUpState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _RegisterState extends State<Register> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
