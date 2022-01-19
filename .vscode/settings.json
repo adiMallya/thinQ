@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "Dart-Code.dart-code",
+  "editor.formatOnSave": true,
+  "editor.fontSize": 16,
+  "window.zoomLevel": 0.5,
+  "dart.flutterHotReloadOnSave": "always",
+  "editor.formatOnType": false
+}
