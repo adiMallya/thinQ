@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService{
   final FirebaseAuth _auth;
@@ -24,13 +25,13 @@ class AuthService{
   Future<String?> signUp(
     {required String email, required String password}) async {
     try {
-      UserCredential res = await _auth.createUserWithEmailAndPassword(
+      await _auth.createUserWithEmailAndPassword(
         email: email, password: password
       );
-      User? user = res.user;
-      if (user != null) {
-        user.updateDisplayName(user.email?.split("@")[0]);
-      }
+      //store name & email in local storage
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString("myName", email.split('@')[0]);
+      prefs.setString("myEmail", email);
       return "Signed up";
     } on FirebaseAuthException catch(e) {
       return e.message;
@@ -38,8 +39,8 @@ class AuthService{
   }
 
   //current user
-  User? getMe(){
-    return _auth.currentUser;
+  String? getMyId(){
+    return _auth.currentUser?.uid;
   }
 
   //sign-out
