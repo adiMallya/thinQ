@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:forum_app/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:forum_app/screens/auth/sign_in.dart';
-import 'package:forum_app/screens/home/home.dart';
+import 'package:forum_app/screens/home.dart';
 import 'package:provider/provider.dart';
 
 class Wrapper extends StatelessWidget {
