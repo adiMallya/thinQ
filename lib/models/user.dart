@@ -1,5 +1,13 @@
-class User {
-  final String email, password, image;
+class UserData {
+  final String? email;
+  final String? name;
+  final List<String>? myVoteList;
+  final List<String>? myVoteAnswerList;
 
-  User(this.email, this.password, this.image);
+  UserData({
+    this.email,
+    this.name, 
+    this.myVoteList, 
+    this.myVoteAnswerList
+  });
 }
