@@ -74,7 +74,7 @@ class _HomeState extends State<Home>{
         : PageView(
             controller: _pageController,
             children: [
-              const MyFeed(), 
+              MyFeed(myData: myData, updateMyData: updateMyData), 
               Profile(myData: myData, updateMyData: updateMyData)
             ],
             physics: const NeverScrollableScrollPhysics(),
