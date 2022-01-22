@@ -21,7 +21,7 @@ class _WritePostState extends State<WritePost> {
   FocusNode writeTextFocus = FocusNode();
   bool _isLoading = false;
 
-  void _postToDB() {
+  void _postToDB() async {
     setState(() {
       _isLoading = true;
     });
@@ -31,7 +31,7 @@ class _WritePostState extends State<WritePost> {
       postID, 
       writeTitleController.text, 
       writePostController.text,
-      widget.myData
+      widget.myData.email
     );
 
     setState(() {
