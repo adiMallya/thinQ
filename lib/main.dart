@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:forum_app/screens/splash_screen.dart';
+import 'package:forum_app/views/screens/splash_screen.dart';
 import 'package:forum_app/services/auth.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
