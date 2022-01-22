@@ -1,13 +1,13 @@
 class UserData {
-  final String? email;
-  final String? name;
+  final String email;
+  final String name;
   final List<String>? myVoteList;
-  final List<String>? myVoteAnswerList;
+  final List<String>? myVoteCommentList;
 
   UserData({
-    this.email,
-    this.name, 
+    required this.email,
+    required this.name, 
     this.myVoteList, 
-    this.myVoteAnswerList
+    this.myVoteCommentList
   });
 }
