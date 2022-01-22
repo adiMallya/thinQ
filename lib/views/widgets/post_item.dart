@@ -142,7 +142,7 @@ class _PostItemState extends State<PostItem> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () => {},
+                      onTap: () => widget.isFromPost ? widget.postItemAction(widget.data) : null,
                       child: Row(
                         children: <Widget>[
                           const Icon(Icons.mode_comment,size: 18, color: Colors.cyan,),
