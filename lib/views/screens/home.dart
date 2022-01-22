@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forum_app/models/user.dart';
-import 'package:forum_app/screens/feed/my_feed.dart';
-import 'package:forum_app/screens/profile.dart';
+import 'package:forum_app/views/screens/feed/my_feed.dart';
+import 'package:forum_app/views/screens/profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget { 
@@ -33,10 +33,10 @@ class _HomeState extends State<Home>{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       myData = UserData(
-        name: prefs.getString('myName'),
-        email: prefs.getString('myEmail'),
+        name: prefs.getString('myName')!,
+        email: prefs.getString('myEmail')!,
         myVoteList: prefs.getStringList('myVoteList'),
-        myVoteAnswerList: prefs.getStringList('myVoteAnswerList')
+        myVoteCommentList: prefs.getStringList('myVoteCommentList')
       );
     });
 

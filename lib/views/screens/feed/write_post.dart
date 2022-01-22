@@ -27,17 +27,24 @@ class _WritePostState extends State<WritePost> {
     });
     // upload post data to dB
     String postID = Utils.getRandomString(8) + Random().nextInt(500).toString();
-    DatabaseService.sendPostToDb(
-      postID, 
-      writeTitleController.text, 
-      writePostController.text,
-      widget.myData.email
-    );
+    try {
+      DatabaseService.sendPostToDb(
+        postID, 
+        writeTitleController.text, 
+        writePostController.text,
+        widget.myData
+      );
 
-    setState(() {
-      _isLoading = true;
-    });
-    Navigator.pop(context);
+      setState(() {
+        _isLoading = false;
+      });
+      Navigator.pop(context);
+    } catch(e) {
+      setState(() {
+        _isLoading = false;
+      });
+      print("Error : $e");
+    }
   }
 
   @override

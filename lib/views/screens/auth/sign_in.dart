@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:forum_app/screens/auth/register.dart';
-import 'package:forum_app/screens/home.dart';
+import 'package:forum_app/views/screens/auth/register.dart';
+import 'package:forum_app/views/screens/home.dart';
 import 'package:forum_app/services/auth.dart';
 import 'package:provider/provider.dart';
 

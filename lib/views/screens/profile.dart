@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forum_app/models/user.dart';
 import 'package:provider/provider.dart';
-import 'package:forum_app/screens/splash_screen.dart';
+import 'package:forum_app/views/screens/splash_screen.dart';
 import 'package:forum_app/services/auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,8 +21,8 @@ class _ProfileState extends State<Profile> {
 
   @override
   void initState() {
-    _currentName = widget.myData.name!;
-    _email = widget.myData.email!;
+    _currentName = widget.myData.name;
+    _email = widget.myData.email;
     super.initState();
   }
 
@@ -153,7 +153,8 @@ class _ProfileState extends State<Profile> {
       _currentName = newName;
     });
     UserData updatedData = UserData(
-      name: newName
+      name: newName,
+      email: widget.myData.email
     );
     widget.updateMyData(updatedData);
   }
