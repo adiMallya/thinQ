@@ -67,27 +67,40 @@ class _PostItemState extends State<PostItem> {
                 onTap: () => widget.isFromPost ? widget.postItemAction(widget.data) : null,
                 child: Row(
                   children: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          widget.data['postTitle'], 
-                          style: const TextStyle(
-                            fontSize: 18, 
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: Text(
-                            Utils.readTimestamp(widget.data['postTimeStamp']),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(6.0,3.0,10.0,2.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            widget.data['userName'], 
                             style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.black87
-                            )
+                              fontSize: 12, 
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Text(
+                              Utils.readTimestamp(widget.data['postTimeStamp']),
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Colors.black87
+                              )
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        widget.data['postTitle'],
+                        style: const TextStyle(
+                          fontSize: 18, 
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
                     ),
                     const Spacer(),
                   ],
@@ -101,7 +114,7 @@ class _PostItemState extends State<PostItem> {
                     (widget.data['postContent'] as String).length > 200
                     ? '${(widget.data['postContent'] as String).substring(0, 132)} ...' 
                     : widget.data['postContent'],
-                    style: const TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 14),
                     maxLines: 4,
                   ),
                 ),
@@ -124,17 +137,17 @@ class _PostItemState extends State<PostItem> {
                             size: 18,
                             color: widget.myData.myVoteList != null && 
                             widget.myData.myVoteList!.contains(widget.data['postID']) ? 
-                            Colors.cyan : Colors.grey[400]),
+                            Colors.cyan : Colors.grey[600]),
                           Padding(
                             padding: const EdgeInsets.only(left:8.0),
                             child: Text(
-                              '${widget.isFromPost ? widget.data['postVoteCount'] : _voteCount}',
+                              'Votes ( ${widget.isFromPost ? widget.data['postVoteCount'] : _voteCount} )',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: widget.myData.myVoteList != null && 
                                 widget.myData.myVoteList!.contains(widget.data['postID']) ? 
-                                Colors.cyan : Colors.grey[400]
+                                Colors.cyan : Colors.grey[600]
                               ),
                             ),
                           ),
@@ -145,14 +158,20 @@ class _PostItemState extends State<PostItem> {
                       onTap: () => widget.isFromPost ? widget.postItemAction(widget.data) : null,
                       child: Row(
                         children: <Widget>[
-                          const Icon(Icons.mode_comment,size: 18, color: Colors.cyan,),
+                          Icon(
+                            Icons.mode_comment,
+                            size: 18,
+                            color: widget.commentCount > 0 ? 
+                            Colors.cyan : Colors.grey[600]),
                           Padding(
                             padding: const EdgeInsets.only(left:8.0),
                             child: Text(
-                              '${widget.commentCount}',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold
+                              'Response ( ${widget.commentCount} )',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: widget.commentCount > 0 ?
+                                Colors.cyan : Colors.grey[600],
                               ),
                             ),
                           ),
