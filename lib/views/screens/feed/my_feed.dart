@@ -32,7 +32,7 @@ class _MyFeedState extends State<MyFeed> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "theForum",
+          "thinQ",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
