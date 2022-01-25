@@ -35,11 +35,11 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: RichText(
           text: const TextSpan(
-            text: 'THIN',
+            text: 'thin',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 35.0,
+              fontSize: 44.0,
             ),
             children: <TextSpan>[
               TextSpan(
@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 50.0,
+                  fontSize: 55.0,
                 ),
               )
             ]
