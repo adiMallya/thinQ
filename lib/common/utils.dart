@@ -46,30 +46,6 @@ class Utils {
     return returnText;
   }
 
-  static List<DocumentSnapshot> sortDocumentsByComment(List<DocumentSnapshot> data){
-    List<DocumentSnapshot> _originalData = data;
-    Map<String,List<DocumentSnapshot>> commentDocuments = <String,List<DocumentSnapshot>>{};
-    List<int> replyCommentIndex = [];
-
-    replyCommentIndex.sort((a,b){
-      return b.compareTo(a);
-    });
-
-    // remove comment
-    if(replyCommentIndex.isNotEmpty){
-      for(int i = 0; i < replyCommentIndex.length; i++){
-        _originalData.removeAt(replyCommentIndex[i]);
-      }
-    }
-
-    // Add list to comment
-    // for(int i = 0; i < _originalData.length; i++){
-    //   if (commentDocuments[_originalData[i]['commentID']] != null){
-    //     _originalData.insertAll(i+1,commentDocuments[_originalData[i]['commentID']]);
-    //   }
-    // }
-    return _originalData;
-  }  
   //helpers
   static String readTimestamp(int timestamp) {
     var now = DateTime.now();
