@@ -55,7 +55,9 @@ class _HomeState extends State<Home>{
     setState(() {
       pageIndex = index;
     });
-    _pageController.jumpToPage(index);
+    if(_pageController.hasClients) {
+      _pageController.jumpToPage(index);
+    }
   }
 
   @override
