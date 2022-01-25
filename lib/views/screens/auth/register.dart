@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:forum_app/common/widgets.dart';
 import 'package:forum_app/views/screens/home.dart';
 import 'package:forum_app/services/auth.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
@@ -44,7 +46,7 @@ class _RegisterState extends State<Register> {
                         Icons.arrow_back_ios
                       ), 
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.pop(context);
                       }),
                   ),
                   SizedBox(
@@ -77,20 +79,20 @@ class _RegisterState extends State<Register> {
                   Container(
                     width: size.width,
                     alignment: Alignment.center,
-                    child: field(size, "email", Icons.account_box, emailController),
+                    child: MyWidgets.textField(size, "email", Icons.account_box, emailController),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 18.0),
                     child: Container(
                       width: size.width,
                       alignment: Alignment.center,
-                      child: field(size, "password", Icons.lock, passwordController),
+                      child: MyWidgets.passwordField(size, "password", Icons.lock, passwordController),
                     ),
                   ),
                   Container(
                     width: size.width,
                     alignment: Alignment.center,
-                    child: field(size, "confirm password", Icons.lock, confirmPasswordController),
+                    child: MyWidgets.passwordField(size, "confirm password", Icons.lock, confirmPasswordController),
                   ),
                   SizedBox(
                     height: size.height / 10,
@@ -142,7 +144,7 @@ class _RegisterState extends State<Register> {
 
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => const Home()),
+                  PageTransition(child: const Home(), type: PageTransitionType.fade),
                 );
               } else {
 
@@ -160,7 +162,7 @@ class _RegisterState extends State<Register> {
                         TextButton(
                           child: const Text("Ok"),
                           onPressed: () {
-                            Navigator.of(context).pop();
+                            Navigator.pop(context);
                           },
                         ),
                       ],
@@ -189,7 +191,7 @@ class _RegisterState extends State<Register> {
                     TextButton(
                       child: const Text('Ok'),
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.pop(context);
                       },
                     ),
                   ],
@@ -212,7 +214,7 @@ class _RegisterState extends State<Register> {
                     TextButton(
                       child: const Text('Ok'),
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.pop(context);
                       },
                     ),
                   ],
@@ -238,27 +240,6 @@ class _RegisterState extends State<Register> {
               fontWeight: FontWeight.bold,
             ),
           )),
-    );
-  }
-
-  Widget field(
-      Size size, String hintText, IconData icon, TextEditingController cont) {
-    return Container(
-      height: size.height / 14,
-      width: size.width / 1.1,
-      child: TextField(
-        controller: cont,
-        
-        decoration: InputDecoration(
-          prefixIcon: Icon(icon),
-          
-          hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.grey),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-      ),
     );
   }
 }

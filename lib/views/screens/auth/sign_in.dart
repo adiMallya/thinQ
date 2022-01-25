@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:forum_app/common/widgets.dart';
 import 'package:forum_app/views/screens/auth/register.dart';
 import 'package:forum_app/views/screens/home.dart';
 import 'package:forum_app/services/auth.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {
@@ -72,14 +74,14 @@ class _SignInState extends State<SignIn> {
                   Container(
                     width: size.width,
                     alignment: Alignment.center,
-                    child: field(size, "email", Icons.account_box, emailController),
+                    child: MyWidgets.textField(size, "email", Icons.account_box, emailController),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 18.0),
                     child: Container(
                       width: size.width,
                       alignment: Alignment.center,
-                      child: field(size, "password", Icons.lock, passwordController),
+                      child: MyWidgets.passwordField(size, "password", Icons.lock, passwordController),
                     ),
                   ),
                   SizedBox(
@@ -91,8 +93,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   GestureDetector(
                     onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const Register())
-                    ),
+                      MaterialPageRoute(builder: (_) => const Register())),
                     child: const Text(
                       "Create an account",
                       style: TextStyle(
@@ -131,7 +132,7 @@ class _SignInState extends State<SignIn> {
           });
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Home()),
+            PageTransition(child: const Home(), type: PageTransitionType.fade),
           );
         } else {
           passwordController.text = "";
@@ -149,7 +150,7 @@ class _SignInState extends State<SignIn> {
                   TextButton(
                     child: const Text("Ok"),
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      Navigator.pop(context);
                     },
                   )
                 ],
@@ -175,25 +176,6 @@ class _SignInState extends State<SignIn> {
             ),
           )
         ),
-    );
-  }
-
-  Widget field(
-    Size size, String hintText, IconData icon, TextEditingController cont) {
-    return Container(
-      height: size.height / 14,
-      width: size.width / 1.1,
-      child: TextField(
-        controller: cont,
-        decoration: InputDecoration(
-          prefixIcon: Icon(icon),
-          hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.grey),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-      ),
     );
   }
 }
