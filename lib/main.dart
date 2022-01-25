@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 import 'package:forum_app/views/screens/splash_screen.dart';
 import 'package:forum_app/services/auth.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +9,8 @@ import 'package:google_fonts/google_fonts.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+  .then((value) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
