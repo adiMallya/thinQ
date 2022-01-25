@@ -1,16 +1,24 @@
-# forum_app
+<h1 align="center">thinQ</h1>
 
-A new Flutter project.
+<p align="center">
+Think. Inquire. Question.
+<!-- <img width="320px" src="tt_scheduler/static/images/logo-1.png" alt="timeUp logo"></img> -->
+</br> Ask what you want to and let the community respond to help you.
+</p><br>
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone this repository 
+```
+    git clone https://github.com/adiMallya/thinQ.git && cd thinQ
+```
 
-A few resources to get you started if this is your first Flutter project:
+2. Install dependencies
+```
+    flutter pub get
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Run the app(on emulator or physical device)
+```
+    flutter run
+```
