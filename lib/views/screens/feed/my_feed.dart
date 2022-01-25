@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:forum_app/common/widgets.dart';
 import 'package:forum_app/models/user.dart';
@@ -78,7 +79,7 @@ class _MyFeedState extends State<MyFeed> {
       floatingActionButton: FloatingActionButton(
         onPressed: _writePost,
         child: const Icon(
-          Icons.create,
+          CupertinoIcons.create_solid,
           color: Colors.white,
         ),
       ),

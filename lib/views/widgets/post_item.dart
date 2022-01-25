@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:forum_app/common/utils.dart';
 import 'package:forum_app/models/user.dart';
@@ -133,7 +134,7 @@ class _PostItemState extends State<PostItem> {
                       child: Row(
                         children: <Widget>[
                           Icon(
-                            Icons.arrow_upward_rounded,
+                            CupertinoIcons.arrow_up_circle_fill,
                             size: 18,
                             color: widget.myData.myVoteList != null && 
                             widget.myData.myVoteList!.contains(widget.data['postID']) ? 
