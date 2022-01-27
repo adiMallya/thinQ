@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:forum_app/models/user.dart';
+import 'package:forum_app/views/screens/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:forum_app/views/screens/splash_screen.dart';
 import 'package:forum_app/services/auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -92,7 +92,7 @@ class _ProfileState extends State<Profile> {
                 context.read<AuthService>().signOut();
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SplashScreen()
+                    builder: (context) => const Wrapper()
                   )
                 );
               },

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:forum_app/views/screens/splash_screen.dart';
 import 'package:forum_app/services/auth.dart';
+import 'package:forum_app/views/screens/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        home: const SplashScreen(),
+        home: const Wrapper(),
         theme: ThemeData(
           primarySwatch: Colors.cyan,
           textTheme: GoogleFonts.poppinsTextTheme(
