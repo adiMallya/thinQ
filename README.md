@@ -1,8 +1,8 @@
 <h1 align="center">thinQ</h1>
 
 <p align="center">
-Think. Inquire. Question.
-<!-- <img width="320px" src="tt_scheduler/static/images/logo-1.png" alt="timeUp logo"></img> -->
+Think. Inquire. Question.</br>
+<img width="220px" src="android/app/src/main/res/drawable/logo_primary.png" alt="mylogo"/>
 </br> Ask what you want to and let the community respond to help you.
 </p><br>
 
